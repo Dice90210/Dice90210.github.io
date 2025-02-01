@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #C00000;
+}
+
+.large-number {
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Moo Lah Lah', serif;
+    font-size: 400px;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .large-number {
+        font-size: 40px;
+    }
+}
+
+.scouting-container {
+    margin: 18px 0 0;
+    flex: 1;
+    width: 239px;
+  }
