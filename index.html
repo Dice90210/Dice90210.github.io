@@ -30,6 +30,7 @@
             background-color: #C00000;
             padding: 10px 20px;
             box-sizing: border-box;
+            z-index: 1000; /* Ensure header stays on top */
         }
 
         .logo {
@@ -42,6 +43,7 @@
             gap: 20px;
             font-size: 18px;
             font-family: Arial, sans-serif;
+            flex-wrap: wrap; /* Allow navbar items to wrap on smaller screens */
         }
 
         .navbar a {
@@ -135,20 +137,61 @@
             -webkit-text-stroke-color: black;
         }
 
+        /* made for wider screens*/
         @media (max-width: 991px) {
+            .header {
+                flex-direction: column; 
+                padding: 10px;
+            }
+
+            .navbar {
+                margin-left: 0;
+                gap: 10px;
+                justify-content: center; 
+            }
+
             .number-container {
-                font-size: 40px;
+                font-size: 150px; 
             }
+
             .robot {
-                height: 50px;
+                height: 150px; 
             }
+
             .glow {
                 width: 300px;
                 height: 150px;
             }
+
             .team-description {
-                font-size: 18px;
+                font-size: 24px; 
             }
+        }
+
+        /* this is for mobile phones and shi with small screens*/
+        /* 480 23*/
+        @media (max-width: 480px) {
+            .number-container {
+                font-size: 100px;
+                margin-top: 50px; 
+            }
+
+            .robot {
+                height: 100px; 
+                top: -50px; 
+            }
+
+            .glow {
+                top: 45%; 
+            }
+
+            .team-description {
+                font-size: 18px; 
+                transform: translate(0%, 80%); 
+                text-shadow: 1px 1px 2px black;
+                -webkit-text-stroke-width: 0px;
+            }
+
         }
     </style>
 </head>
@@ -174,6 +217,8 @@
     </div>
     <div class="team-description">
         We’re FTC Robotics team 7959 CHS Cougars from Maplewood, NJ!
+    </div>
+    <div class="team-description">
     </div>
     <div class="team-description">
         Check out all of our pages!
