@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7959 Cougars</title>
+    <link rel="icon" href="robotics.PNG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #C00000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #C00000;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .navbar {
+            display: flex;
+            margin-left: 20px;
+            gap: 20px;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .number-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Moo Lah Lah', serif;
+            font-size: 400px;
+            font-weight: normal;
+            color: rgba(0, 0, 0, 1);
+            margin-top: 0;
+            position: relative;
+            top: -50px;
+        }
+
+        .glow {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            width: 800px;
+            height: 500px;
+            background: radial-gradient(ellipse, rgba(255,255,255,0.9) 0%, rgba(192,0,0,0.6) 70%, rgba(192,0,0,0) 100%);
+            transform: translate(-50%, -30%);
+            z-index: 0;
+        }
+
+        .robot {
+            height: 300px;
+            position: absolute;
+            top: -100px;
+            left: -300px;
+            transform: translate(-30%, 110%);
+            z-index: 2;
+            animation: fly-in 2s ease-out forwards;
+        }
+
+        @keyframes fly-in {
+            from {
+                left: -300px;
+                opacity: 0;
+            }
+            to {
+                left: 50%;
+                opacity: 1;
+            }
+        }
+
+        .number-container span {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            opacity: 0;
+            animation: drop-in 1s ease-out forwards;
+        }
+
+        .number-container span:nth-child(1) { animation-delay: 0.2s; }
+        .number-container span:nth-child(2) { animation-delay: 0.4s; }
+        .number-container span:nth-child(3) { animation-delay: 0.6s; }
+        .number-container span:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes drop-in {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .team-description {
+            font-family: Arial, sans-serif;
+            font-size: 40px;
+            color: white;
+            margin-top: 20px;
+            transform: translate(0%, 100%);
+            text-shadow: 1px 1px 2px black;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+        }
+
+        @media (max-width: 991px) {
+            .number-container {
+                font-size: 40px;
+            }
+            .robot {
+                height: 50px;
+            }
+            .glow {
+                width: 300px;
+                height: 150px;
+            }
+            .team-description {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="https://www.somsd.k12.nj.us/columbia/" target="_blank">
+            <img src="cougars.png" alt="Team Logo" class="logo">
+        </a>
+        <nav class="navbar">
+            <a href="scouting.html">Scouting Page</a>
+            <a href="about.html">About the team</a>
+            <a href="scouting.html">Socials</a>
+            <a href="sponsors.html">Sponsors</a>
+        </nav>
+    </div>
+    <div class="number-container">
+        <div class="glow"></div>
+        <span>7</span>
+        <span>9</span>
+        <span>5</span>
+        <span>9</span>
+        <img src="robot.png" alt="robot" class="robot">
+    </div>
+    <div class="team-description">
+        We’re FTC Robotics team 7959 CHS Cougars from Maplewood, NJ!
+    </div>
+    <div class="team-description">
+        Check out all of our pages!
+    </div>
+</body>
+</html>

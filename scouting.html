@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7959 Cougars</title>
+    <link rel="icon" href="robotics.PNG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-color: #C00000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #C00000;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .navbar {
+            display: flex;
+            margin-left: 20px;
+            gap: 20px;
+            font-size: 18px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .scouting-info {
+            margin-top: 120px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .scouting-info a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .info-section {
+            margin-top: 20px;
+            text-align: left;
+            max-width: 800px;
+        }
+
+        .info-section p {
+            font-size: 20px;
+        }
+
+        .info-section span {
+            font-weight: bold;
+            color: #00FF00;
+        }
+
+        @media (max-width: 991px) {
+            .scouting-info {
+                font-size: 18px;
+            }
+            .info-section p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="https://www.somsd.k12.nj.us/columbia/" target="_blank">
+            <img src="cougars.png" alt="Team Logo" class="logo">
+        </a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About the team</a>
+            <a href="socials.html">Socials</a>
+            <a href="sponsors.html">Sponsors</a>
+        </nav>
+    </div>
+
+    <div class="scouting-info">
+        <h1>Scouting info</h1>
+        <p>FTC Scout Link (Avg PPG): <a href="https://ftcscout.org/teams/7959">https://ftcscout.org/teams/7959</a></p>
+        <div class="info-section">
+            <p><span>Autonomous:</span> We are a sample-based robot that prefers the left side for auto. We score 4 samples in the high basket 95% of the time.</p>
+            <p><span>Teleop:</span> We cycle between the pit to the bucket for our strategy, with a cycle time of 6-7 seconds.</p>
+            <p><span>Endgame:</span> For endgame, we try to get as many samples as we can, along with touching the bar at the end or parking if possible. We have no hang mechanism.</p>
+        </div>
+    </div>
+</body>
+</html>
