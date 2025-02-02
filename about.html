@@ -11,13 +11,14 @@
     <style>
         body {
             margin: 0;
-            height: 100vh;
             background-color: #fe092e;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
         }
 
         .header {
@@ -30,6 +31,7 @@
             background-color: #fe092e;
             padding: 10px 20px;
             box-sizing: border-box;
+            z-index: 1000;
         }
 
         .logo {
@@ -41,7 +43,6 @@
             margin-left: 20px;
             gap: 20px;
             font-size: 18px;
-            font-family: Arial, sans-serif;
         }
 
         .navbar a {
@@ -55,105 +56,39 @@
             color: black;
         }
 
-        .number-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Moo Lah Lah', serif;
-            font-size: 400px;
-            font-weight: normal;
-            color: rgba(0, 0, 0, 1);
-            margin-top: 0;
-            position: relative;
-            top: -50px;
+        img:not(.logo) {
+            max-width: 100%;
+            height: auto;
+            margin-top: 100px; 
         }
 
-        .glow {
-            position: absolute;
-            top: 35%;
-            left: 50%;
-            width: 800px;
-            height: 500px;
-            background: radial-gradient(ellipse, rgba(255,255,255,0.9) 0%, rgba(192,0,0,0.6) 70%, rgba(192,0,0,0) 100%);
-            transform: translate(-50%, -30%);
-            z-index: 0;
-        }
-
-        .robot {
-            height: 300px;
-            position: absolute;
-            top: -100px;
-            left: -300px;
-            transform: translate(-30%, 110%);
-            z-index: 2;
-            animation: fly-in 2s ease-out forwards;
-        }
-
-        @keyframes fly-in {
-            from {
-                left: -300px;
-                opacity: 0;
-            }
-            to {
-                left: 50%;
-                opacity: 1;
-            }
-        }
-
-        .number-container span {
-            position: relative;
-            z-index: 1;
-            display: inline-block;
-            opacity: 0;
-            animation: drop-in 1s ease-out forwards;
-        }
-
-        .number-container span:nth-child(1) { animation-delay: 0.2s; }
-        .number-container span:nth-child(2) { animation-delay: 0.4s; }
-        .number-container span:nth-child(3) { animation-delay: 0.6s; }
-        .number-container span:nth-child(4) { animation-delay: 0.8s; }
-
-        @keyframes drop-in {
-            from {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .team-description {
+        .WIP {
             font-family: Arial, sans-serif;
             font-size: 40px;
             color: white;
             margin-top: 20px;
-            transform: translate(0%, 100%);
-            text-shadow: 1px 1px 2px black;
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: black;
-        }
-        .WIP{
-            font-family: Arial, sans-serif;
-            font-size: 40px;
-            color: white;
-            transform: translate(0px, 100%);
         }
 
         @media (max-width: 991px) {
-            .number-container {
-                font-size: 40px;
+            .header {
+                flex-direction: column;
+                padding: 10px;
             }
-            .robot {
-                height: 50px;
+
+            .navbar {
+                flex-direction: column;
+                margin: 15px 0 0 0;
+                gap: 10px;
             }
-            .glow {
-                width: 300px;
-                height: 150px;
+
+            img:not(.logo) {
+                margin-top: 320px; 
             }
-            .team-description {
-                font-size: 18px;
+
+            .WIP {
+                font-size: 30px;
+                transform: none; 
+                margin-top: 50px;
             }
         }
     </style>
@@ -170,9 +105,7 @@
             <a href="sponsors.html">Sponsors</a>
         </nav>
     </div>
-    <img src="aboutheteam.png">
-    <div class="WIP">
-    </div>
+    <img src="aboutheteam.png" alt="About the Team">
     <div class="WIP">
         Coming Soon!
     </div>
