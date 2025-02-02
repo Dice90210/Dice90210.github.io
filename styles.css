@@ -1,7 +1,7 @@
 body {
     margin: 0;
     height: 100vh;
-    background-color: #C00000;
+    background-color: #fe092e;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,7 +16,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #C00000;
+    background-color: #fe092e;
     padding: 10px 20px;
     box-sizing: border-box;
     z-index: 1000; 
@@ -65,7 +65,7 @@ body {
     left: 50%;
     width: 800px;
     height: 500px;
-    background: radial-gradient(ellipse, rgba(255,255,255,0.9) 0%, rgba(192,0,0,0.6) 70%, rgba(192,0,0,0) 100%);
+    background: radial-gradient(ellipse, rgba(255,255,255,0.9) 0%, rgba(254,9,46,0.6) 70%, rgba(192,0,0,0) 100%);
     transform: translate(-50%, -30%);
     z-index: 0;
 }
