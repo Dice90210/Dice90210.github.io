@@ -2,26 +2,183 @@ body {
     margin: 0;
     height: 100vh;
     background-color: #C00000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.large-number {
-    color: rgba(0, 0, 0, 1);
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #C00000;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 1000; /* Ensure header stays on top */
+}
+
+.logo {
+    height: 80px;
+}
+
+.navbar {
+    display: flex;
+    margin-left: 20px;
+    gap: 20px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    flex-wrap: wrap; /* Allow navbar items to wrap on smaller screens */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.number-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Moo Lah Lah', serif;
     font-size: 400px;
     font-weight: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: rgba(0, 0, 0, 1);
+    margin-top: 0;
+    position: relative;
+    top: -50px;
 }
 
-@media (max-width: 991px) {
-    .large-number {
-        font-size: 40px;
+.glow {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.9) 0%, rgba(192,0,0,0.6) 70%, rgba(192,0,0,0) 100%);
+    transform: translate(-50%, -30%);
+    z-index: 0;
+}
+
+.robot {
+    height: 300px;
+    position: absolute;
+    top: -100px;
+    left: -300px;
+    transform: translate(-30%, 110%);
+    z-index: 2;
+    animation: fly-in 2s ease-out forwards;
+}
+
+@keyframes fly-in {
+    from {
+        left: -300px;
+        opacity: 0;
+    }
+    to {
+        left: 50%;
+        opacity: 1;
     }
 }
 
-.scouting-container {
-    margin: 18px 0 0;
-    flex: 1;
-    width: 239px;
+.number-container span {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    opacity: 0;
+    animation: drop-in 1s ease-out forwards;
+}
+
+.number-container span:nth-child(1) { animation-delay: 0.2s; }
+.number-container span:nth-child(2) { animation-delay: 0.4s; }
+.number-container span:nth-child(3) { animation-delay: 0.6s; }
+.number-container span:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes drop-in {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.team-description {
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    color: white;
+    margin-top: 20px;
+    transform: translate(0%, 100%);
+    text-shadow: 1px 1px 2px black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+/* made for wider screens*/
+@media (max-width: 991px) {
+    .header {
+        flex-direction: column; 
+        padding: 10px;
+    }
+
+    .navbar {
+        margin-left: 0;
+        gap: 10px;
+        justify-content: center; 
+    }
+
+    .number-container {
+        font-size: 150px; 
+    }
+
+    .robot {
+        height: 150px; 
+    }
+
+    .glow {
+        width: 300px;
+        height: 150px;
+    }
+
+    .team-description {
+        font-size: 24px; 
+    }
+}
+
+/* this is for mobile phones and shi with small screens*/
+/* 480 23*/
+@media (max-width: 480px) {
+    .number-container {
+        font-size: 100px;
+        margin-top: 63px; 
+    }
+
+    .robot {
+        height: 100px; 
+        top: -63px; 
+    }
+
+    .glow {
+        top: 50%; 
+    }
+
+    .team-description {
+        font-size: 18px; 
+        transform: translate(0%, 80%); 
+        text-shadow: 1px 1px 2px black;
+        -webkit-text-stroke-width: 0px;
+    }
+
 }
